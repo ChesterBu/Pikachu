@@ -7,17 +7,15 @@ const {
 
 function writeCss(prefix, code) {
     let domCode = document.querySelector('#code');
+    let styleTag = document.querySelector('#styleTag');
     let n = 0;
     return new Promise((resolve, reject) => {
-        let id = setInterval(() => {
+        let id = setTimeout(function run() {
             n += 1;
             domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css);
             styleTag.innerHTML = prefix + code.substring(0, n);
             domCode.scrollTop = domCode.scrollHeight;
-            if (n >= code.length) {
-                window.clearInterval(id);
-                resolve();
-            }
+            n < code.length ? id = setTimeout(run, 50) : resolve();
         }, 50);
     });
 
@@ -47,7 +45,7 @@ function createPaper() {
 
 function playAudio() {
     let audio = document.getElementsByTagName("audio")[0];
-    audio.currentTime = 0.5;
+    audio.currentTime = 0.3;
     audio.play();
 }
 

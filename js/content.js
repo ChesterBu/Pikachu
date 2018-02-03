@@ -61,6 +61,10 @@ body #paper > .content {
     margin-left: .6em;
 }
 
+.eye.right {
+    right: .6em;
+}
+
 .eye:after {
     width: .25em;
     height: .25em;
@@ -74,16 +78,14 @@ body #paper > .content {
     margin-top: -.02em;
 }
 
-.eye.right {
-    right: .6em;
-}
+
 /* 然后是鼻子 */
 .nose {
     position: absolute;
-	margin: .3em calc(50% - .11em);
-	margin-top: .38em;
-	width: 0;
-	height: 0;
+    margin: .3em calc(50% - .11em);
+    margin-top: .38em;
+    width: 0;
+    height: 0;
     z-index: 1; 
     border-style: solid;
     border-width: .11em;
@@ -92,6 +94,7 @@ body #paper > .content {
 }
 
 /* 然后到了巨难画的嘴了 */
+
 .ridiculousMouth {
     position: absolute;
     width: 2.28em;
@@ -115,7 +118,6 @@ body #paper > .content {
     top: -.05em;
     transform: rotate(25deg);
     border-bottom-right-radius: .6em .3em;
-    box-shadow: 0 -.1em 0 #FFE600, -.05em -.03em 0 #FFE600;
 }
 
 .ridiculousMouth:before {
@@ -131,8 +133,7 @@ body #paper > .content {
     left: .35em;
     top: -.05em;
     transform: rotate(-25deg);
-    border-bottom-left-radius: .6em .3em;
-    box-shadow: 0 -.1em 0 #FFE600, .05em -.03em 0 #FFE600;
+    border-bottom-left-radius: .6em .3em; 
     z-index: 1;
 }
 
@@ -183,4 +184,8 @@ const css3 = `
  */
 `;
 
-export default {css1,css2,css3};
+export default {
+    css1,
+    css2,
+    css3
+};
