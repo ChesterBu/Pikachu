@@ -14,6 +14,11 @@
 </head>
 
 <body>
+	<div class="actions">
+		<button data-speed="slow">慢速</button>
+		<button data-speed="normal" class="active">中速</button>
+		<button data-speed="fast">快速</button>
+	</div>
 	<div class="sound">
 		<audio>
 			<source src="https://res.cloudinary.com/sasha-tran/video/upload/v1478227626/Pokemon_Pikachu_Sound_Effect_gis313.mp3"> </source>
@@ -22,6 +27,7 @@
 	<div id="code-wrapper">
 		<pre id="code"></pre>
 	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./vendor/prism.js"></script>
 	<script src="./js/main.js" type="module"></script>
 

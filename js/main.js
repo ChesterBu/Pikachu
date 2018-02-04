@@ -1,9 +1,10 @@
-import obj from './content.js';
-const {
+import {
     css1,
     css2,
     css3
-} = obj;
+} from './content.js';
+
+let duration = 50;
 
 function writeCss(prefix, code) {
     let domCode = document.querySelector('#code');
@@ -15,8 +16,8 @@ function writeCss(prefix, code) {
             domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css);
             styleTag.innerHTML = prefix + code.substring(0, n);
             domCode.scrollTop = domCode.scrollHeight;
-            n < code.length ? id = setTimeout(run, 50) : resolve();
-        }, 50);
+            n < code.length ? id = setTimeout(run, duration) : resolve();
+        }, duration);
     });
 
 }
@@ -44,11 +45,30 @@ function createPaper() {
 }
 
 function playAudio() {
-    let audio = document.getElementsByTagName("audio")[0];
+    let audio = document.getElementsByTagName('audio')[0];
     audio.currentTime = 0.3;
     audio.play();
 }
 
+(function () {
+    $('.actions').on('click', 'button', function (e) {
+        let $button = $(e.currentTarget); // button
+        let speed = $button.attr('data-speed');
+        $button.addClass('active')
+            .siblings('.active').removeClass('active');
+        switch (speed) {
+            case 'slow':
+                duration = 100;
+                break;
+            case 'normal':
+                duration = 50;
+                break;
+            case 'fast':
+                duration = 10;
+                break;
+        }
+    });
+}());
 
 
 

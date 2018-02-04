@@ -91,6 +91,7 @@ body #paper > .content {
     border-width: .11em;
     border-color: black transparent     transparent;
     border-radius: .11em;
+    
 }
 
 /* 然后到了巨难画的嘴了 */
@@ -118,6 +119,7 @@ body #paper > .content {
     top: -.05em;
     transform: rotate(25deg);
     border-bottom-right-radius: .6em .3em;
+    box-shadow: 0 -.1em 0 #FFE600, -.05em -.03em 0 #FFE600;
 }
 
 .ridiculousMouth:before {
@@ -134,6 +136,7 @@ body #paper > .content {
     top: -.05em;
     transform: rotate(-25deg);
     border-bottom-left-radius: .6em .3em; 
+    box-shadow: 0 -.1em 0 #FFE600, -.05em -.03em 0 #FFE600;
     z-index: 1;
 }
 
@@ -184,7 +187,7 @@ const css3 = `
  */
 `;
 
-export default {
+export {
     css1,
     css2,
     css3
